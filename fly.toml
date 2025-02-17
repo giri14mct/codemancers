@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for codemancers-studio on 2025-02-17T17:32:57+05:30
+# fly.toml app configuration file generated for codemancers on 2025-02-18T02:05:05+05:30
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'codemancers-studio'
+app = 'codemancers'
 primary_region = 'sin'
 
 [build]
