@@ -112,7 +112,7 @@ const Navbar = () => {
                 Resources
               </span>
               <svg
-                className={`size-5 transition-transform duration-200 ${
+                className={`size-5 cursor-pointer transition-transform duration-200 ${
                   isDropdownOpen ? 'rotate-180' : ''
                 }`}
                 viewBox="0 0 20 20"
