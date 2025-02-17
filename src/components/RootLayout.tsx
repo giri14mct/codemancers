@@ -15,9 +15,11 @@ import { motion, MotionConfig, useReducedMotion } from 'framer-motion'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { Footer } from '@/components/Footer'
+import Footer from '@/components/Footer'
 import { GridPattern } from '@/components/GridPattern'
 import { Logo, Logomark } from '@/components/Logo'
+import Image from 'next/image'
+import companyLogo from '@/images/logo.svg'
 
 const RootLayoutContext = createContext<{
   logoHovered: boolean
@@ -72,10 +74,12 @@ function Header({
             invert={invert}
             filled={logoHovered}
           />
-          <Logo
-            className="hidden h-8 sm:block"
-            invert={invert}
-            filled={logoHovered}
+          <Image
+            src={companyLogo}
+            alt="Codemancers logo"
+            className="h-8"
+            height={104}
+            width={200}
           />
         </Link>
         <div className="flex items-center gap-x-8">
