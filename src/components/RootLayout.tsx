@@ -109,7 +109,7 @@ function Header({
 
 function NavigationRow({ children }: { children: React.ReactNode }) {
   return (
-    <div className="even:mt-px sm:border-b sm:border-neutral-800 sm:bg-neutral-950">
+    <div className="border-b border-neutral-800 even:mt-px sm:bg-neutral-950">
       <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2">{children}</div>
       </Container>
