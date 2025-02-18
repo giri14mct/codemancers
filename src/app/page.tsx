@@ -181,7 +181,7 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="mx-auto max-w-5xl">
           <h1 className="font-display text-5xl font-medium tracking-tight [text-wrap:balance] text-neutral-950 sm:text-7xl">
-            Codemancers provide Expert Web Development For Scalable Digital
+            Codemancers provides Expert Web Development For Scalable Digital
             Success
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
