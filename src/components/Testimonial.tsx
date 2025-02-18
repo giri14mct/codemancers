@@ -38,10 +38,14 @@ export function Testimonial({
                 className="rounded-full"
               />
               <p className="text-xl font-bold text-nowrap">{client.name}</p>
-              <p className="text-base text-nowrap">CTO</p>
+              <p className="font-bold">
+                CTO,
+                <span className="font-display text-5xl font-medium tracking-tight text-neutral-950">
+                  Welab
+                </span>
+              </p>
             </figcaption>
             <blockquote className="relative font-display font-medium tracking-tight text-neutral-950">
-              <p className="text-5xl">Welab</p>
               <p className="mt-4 text-xl before:content-['“'] after:content-['”'] sm:text-2xl sm:before:absolute sm:before:right-full">
                 {children}
               </p>
