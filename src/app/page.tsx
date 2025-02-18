@@ -185,9 +185,9 @@ export default async function Home() {
             Success
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            We are a development studio working at the intersection of design
-            and technology. It’s a really busy intersection though — a lot of
-            our staff have been involved in hit and runs.
+            Using Ruby, Javascript and DevOps, we build secure, high-performance
+            web applications that transform your vision into measurable growth
+            for startups and enterprises alike
           </p>
         </FadeIn>
       </Container>

@@ -83,7 +83,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/about_us/"
-              className={navLinkStyle(pathname, '/about_us/')}
+              className={navLinkStyle(pathname, '/about_us/', 'text-nowrap')}
             >
               About Us
             </Link>

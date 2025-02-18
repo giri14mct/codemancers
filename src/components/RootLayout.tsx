@@ -80,7 +80,7 @@ function Header({
         </Link>
         <div className="items-center gap-x-8 sm:flex">
           <Navbar />
-          <div className="hidden sm:flex">
+          <div className="hidden text-nowrap sm:flex">
             <Button href="/contact" invert={invert}>
               Contact us
             </Button>
