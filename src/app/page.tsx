@@ -174,14 +174,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
-  let caseStudies = Array.from(
-    (await loadCaseStudies())
-      .reduce((acc, caseStudy) => {
-        acc.set(caseStudy.client, caseStudy)
-        return acc
-      }, new Map<string, any>())
-      .values(),
-  ).slice(0, 3)
+  let caseStudies = (await loadCaseStudies()).slice(0, 3)
 
   return (
     <>
