@@ -5,12 +5,12 @@ import { useState } from 'react'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { GridPattern } from '@/components/GridPattern'
-import squareShift from '@/images/squareshift-logo.jpg'
+import squareShift from '@/images/squareshift-logo.png'
 import aananthSolaiyappan from '@/images/clients/aananth-solaiyappan.jpg'
 import rafeequl from '@/images/clients/rafeequl.jpg'
 import kevin from '@/images/clients/kevin.jpg'
-import invertInc from '@/images/clients/invert.png'
-import midTrans from '@/images/clients/mid-trans.png'
+import ivrnetInc from '@/images/clients/ivrnet.svg'
+import midTrans from '@/images/clients/mid-trans.svg'
 
 export function Testimonial() {
   const testimonials = [
@@ -38,7 +38,7 @@ export function Testimonial() {
       image: kevin,
       role: 'CTO',
       company: 'ivrnet Inc.',
-      companyLogo: invertInc,
+      companyLogo: ivrnetInc,
       quote: `The Codemancer team is a self-contained dev shop. They do a great job of interpreting requirements, ask appropriate questions at the appropriate time, self-manage, and deliver. All of this is done using best practices and cutting-edge technology.`,
     },
   ]

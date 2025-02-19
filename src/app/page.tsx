@@ -1,6 +1,5 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
@@ -17,7 +16,6 @@ import weLab from '@/images/clients/we-lab/logo-light.svg'
 import phonepe from '@/images/clients/phonepe/logo-light.svg'
 import premiumBeta from '@/images/clients/premium-beta/logo-light.svg'
 import brightBox from '@/images/clients/bright-box/logo-light.svg'
-import aananthSolaiyappan from '@/images/clients/aananth-solaiyappan/logo-light.jpg'
 import knowledgeFoundry from '@/images/clients/knowledge-foundry/logo-light.svg'
 
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
