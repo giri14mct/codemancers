@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Services() {
   return (
     <Container className="mt-24 sm:mt-32 md:mt-56">
-      <FadeIn>
+      <FadeIn className="mx-auto max-w-5xl">
         <div className="px-6 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4">
             <h1 className="font-display text-5xl font-medium tracking-tight [text-wrap:balance] text-neutral-950 sm:text-7xl">
@@ -32,7 +32,7 @@ export default function Services() {
                   <h2 className="text-custom-gray text-2xl font-semibold">
                     Your Success Starts Here
                   </h2>
-                  <p className="text-gray-70 mt-4 text-base">
+                  <p className="mt-6 text-xl text-neutral-600">
                     At Codemancers, we’re more than just a software development
                     company – we’re your partners in innovation. Whether you’re
                     building a new product, optimizing your operations, or
@@ -48,14 +48,14 @@ export default function Services() {
                 <div className="mt-6 flex w-full flex-col items-center justify-center gap-4 sm:flex-row">
                   <Link
                     href="/portfolio/"
-                    className="text-custom-gray hover:bg-custom-gray flex h-11 w-full items-center justify-center rounded-lg border border-black px-6 text-base font-medium transition-all hover:text-white md:w-70"
+                    className="flex h-11 w-full items-center justify-center rounded-lg border border-black bg-[#356798] px-6 text-base font-medium text-white transition-all md:w-70"
                   >
                     View Our Case Studies →
                   </Link>
 
                   <Link
                     href="/contact/"
-                    className="text-blue-650 border-brand-blue hover:bg-brand-blue flex h-11 w-full items-center justify-center rounded-lg border px-6 text-base font-medium text-nowrap transition-all hover:text-white md:w-auto"
+                    className="border-brand-blue hover:bg-brand-blue flex h-11 w-full items-center justify-center rounded-lg border bg-[#356798] px-6 text-base font-medium text-nowrap text-white transition-all hover:text-white md:w-auto"
                   >
                     Schedule a Free Consultation →
                   </Link>

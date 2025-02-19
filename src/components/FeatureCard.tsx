@@ -4,6 +4,8 @@ import codeReview from '@/images/about_us/code-review.gif'
 import responsive from '@/images/about_us/responsive.gif'
 import checklist from '@/images/about_us/checklist.gif'
 import process from '@/images/about_us/process.gif'
+import { Container } from '@/components/Container'
+import { FadeIn } from '@/components/FadeIn'
 
 interface Feature {
   icon: StaticImageData
@@ -46,29 +48,33 @@ const features: Feature[] = [
 
 const FeatureCard = () => {
   return (
-    <div className="mt-16 flex flex-wrap justify-center gap-8">
-      {features.map((feature, index) => (
-        <div
-          key={index}
-          className="to-gray-10 flex w-full max-w-sm flex-col gap-8 rounded-2xl border bg-gradient-to-br from-white p-8 text-center"
-        >
-          <div className="flex items-center justify-center text-3xl">
-            <Image
-              src={feature.icon}
-              alt={feature.title}
-              height={96}
-              width={96}
-            />
-          </div>
-          <div className="flex flex-col gap-4">
-            <h3 className="text-custom-gray text-xl font-semibold">
-              {feature.title}
-            </h3>
-            <p className="text-gray-70">{feature.description}</p>
-          </div>
+    <Container>
+      <FadeIn>
+        <div className="mt-24 flex flex-wrap justify-evenly gap-8 sm:mt-32 lg:mt-56">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="to-gray-10 flex w-full max-w-sm flex-col gap-8 rounded-2xl border bg-gradient-to-br from-white p-8 text-center"
+            >
+              <div className="flex items-center justify-center text-3xl">
+                <Image
+                  src={feature.icon}
+                  alt={feature.title}
+                  height={96}
+                  width={96}
+                />
+              </div>
+              <div className="flex flex-col gap-4">
+                <h3 className="text-custom-gray text-xl font-semibold">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-70">{feature.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </FadeIn>
+    </Container>
   )
 }
 
