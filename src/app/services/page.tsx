@@ -26,36 +26,34 @@ export default function Services() {
           </div>
           <ServiceCards />
           <div className="mt-16 flex flex-col items-center text-center">
-            <Container>
-              <FadeIn>
-                <div className="mx-auto max-w-5xl">
-                  <h2 className="text-custom-gray text-2xl font-semibold">
-                    Your Success Starts Here
-                  </h2>
-                  <p className="mt-6 text-xl text-neutral-600">
-                    At Codemancers, we’re more than just a software development
-                    company – we’re your partners in innovation. Whether you’re
-                    building a new product, optimizing your operations, or
-                    scaling your business, we have the expertise and passion to
-                    help you succeed. Let’s create something amazing together.
-                  </p>
-                </div>
-              </FadeIn>
-            </Container>
+            <FadeIn>
+              <div className="mx-auto max-w-5xl">
+                <h2 className="text-custom-gray text-2xl font-semibold">
+                  Your Success Starts Here
+                </h2>
+                <p className="mt-6 text-xl text-neutral-600">
+                  At Codemancers, we’re more than just a software development
+                  company – we’re your partners in innovation. Whether you’re
+                  building a new product, optimizing your operations, or scaling
+                  your business, we have the expertise and passion to help you
+                  succeed. Let’s create something amazing together.
+                </p>
+              </div>
+            </FadeIn>
 
             <Container>
               <FadeIn>
                 <div className="mt-6 flex w-full flex-col items-center justify-center gap-4 sm:flex-row">
                   <Link
                     href="/portfolio/"
-                    className="flex h-11 w-full items-center justify-center rounded-lg border border-black bg-[#356798] px-6 text-base font-medium text-white transition-all md:w-70"
+                    className="flex h-11 w-full items-center justify-center rounded-lg border bg-[#356798] px-6 text-base font-medium text-white transition-all md:w-70"
                   >
                     View Our Case Studies →
                   </Link>
 
                   <Link
                     href="/contact/"
-                    className="border-brand-blue hover:bg-brand-blue flex h-11 w-full items-center justify-center rounded-lg border bg-[#356798] px-6 text-base font-medium text-nowrap text-white transition-all hover:text-white md:w-auto"
+                    className="hover:bg-brand-blue flex h-11 w-full items-center justify-center rounded-lg border bg-[#356798] px-6 text-base font-medium text-nowrap text-white transition-all hover:text-white md:w-auto"
                   >
                     Schedule a Free Consultation →
                   </Link>
