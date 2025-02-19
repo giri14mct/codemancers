@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { GridPattern } from '@/components/GridPattern'
@@ -44,6 +44,15 @@ export function Testimonial() {
   ]
 
   const [activeIndex, setActiveIndex] = useState(0)
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null)
+
+  const handleScroll = (index: number) => {
+    setActiveIndex(index)
+    scrollContainerRef.current?.children[index]?.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+    })
+  }
 
   const handleNext = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
@@ -65,8 +74,39 @@ export function Testimonial() {
       <Container>
         <FadeIn>
           <div className="relative">
-            {/* Carousel Wrapper */}
-            <div className="relative overflow-hidden rounded-lg">
+            <div
+              ref={scrollContainerRef}
+              className="flex snap-x snap-mandatory space-x-6 overflow-x-auto scroll-smooth px-4 sm:hidden"
+            >
+              {testimonials.map((client, index) => (
+                <div key={index} className="w-full flex-shrink-0 snap-center">
+                  <figure className="relative mx-auto flex flex-col gap-6">
+                    <blockquote className="mx-auto h-auto text-center text-lg leading-relaxed font-medium">
+                      <p className="before:content-['“'] after:content-['”']">
+                        {client.quote}
+                      </p>
+                    </blockquote>
+
+                    <figcaption className="mt-6 flex items-center justify-center gap-4">
+                      <Image
+                        src={client.image}
+                        alt={client.name}
+                        className="h-12 w-12 rounded-full border border-white/10"
+                        unoptimized
+                      />
+                      <div className="text-left">
+                        <p className="text-sm font-semibold">{client.name}</p>
+                        <p className="text-xs opacity-75">
+                          {client.role}, {client.company}
+                        </p>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              ))}
+            </div>
+
+            <div className="relative hidden overflow-hidden rounded-lg sm:block">
               {testimonials.map((client, index) => (
                 <div
                   key={index}
@@ -157,7 +197,7 @@ export function Testimonial() {
               ))}
             </div>
 
-            <div className="absolute -bottom-10 left-1/2 z-30 flex -translate-x-1/2 space-x-3">
+            <div className="absolute -bottom-10 left-1/2 z-30 flex -translate-x-1/2 space-x-3 sm:hidden">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
@@ -165,7 +205,7 @@ export function Testimonial() {
                   className={`h-2 w-2 rounded-full sm:h-3 sm:w-3 ${
                     activeIndex === index ? 'bg-gray-800' : 'bg-gray-400'
                   }`}
-                  onClick={() => setActiveIndex(index)}
+                  onClick={() => handleScroll(index)}
                 ></button>
               ))}
             </div>
