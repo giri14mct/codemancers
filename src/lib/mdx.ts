@@ -43,6 +43,7 @@ export interface CaseStudy {
   client: string
   title: string
   description: string
+  domain: string
   summary: Array<string>
   logo: ImageProps['src']
   image: ImagePropsWithOptionalAlt

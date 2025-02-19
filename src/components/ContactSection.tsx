@@ -13,7 +13,8 @@ export function ContactSection() {
               Ready to Build Something Amazing?
             </h2>
             <p className="mt-8 font-display text-xl text-white">
-              Let’s explore how Codemancers can help you achieve your goals
+              Let’s talk about how Codemancers can bring your vision to life and
+              help you achieve your goals
             </p>
             <div className="mt-6 flex">
               <Button href="/contact" invert>

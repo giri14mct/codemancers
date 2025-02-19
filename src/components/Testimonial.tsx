@@ -168,7 +168,7 @@ export function Testimonial() {
                       </svg>
                     </button>
 
-                    <blockquote className="mx-auto h-auto text-center text-2xl leading-relaxed font-medium sm:max-w-5xl sm:text-4xl">
+                    <blockquote className="mx-auto h-auto text-center text-2xl leading-relaxed font-medium sm:max-w-5xl sm:text-2xl">
                       <p className="before:content-['“'] after:content-['”']">
                         {client.quote}
                       </p>

@@ -81,27 +81,22 @@ function CaseStudies({
           {caseStudies.map((caseStudy) => (
             <FadeIn key={caseStudy.href} className="flex">
               <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition sm:p-8">
-                <h3>
-                  <span className="absolute inset-0 rounded-3xl" />
+                <h3 className="flex items-center gap-4">
                   <Image
                     src={caseStudy.logo}
                     alt={caseStudy.client}
                     className="h-16 w-16"
                     unoptimized
                   />
+                  <p className="flex gap-x-2 text-xl font-semibold text-neutral-950">
+                    {caseStudy.client}
+                  </p>
                 </h3>
-                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
-                  <time
-                    dateTime={caseStudy.date.split('-')[0]}
-                    className="font-semibold"
-                  >
-                    {caseStudy.date.split('-')[0]}
-                  </time>
-                  <span className="text-neutral-300" aria-hidden="true">
-                    /
-                  </span>
-                  <span>{caseStudy.client}</span>
-                </p>
+                <div className="mt-8 flex w-24 items-center justify-center">
+                  <p className="w-full rounded-full bg-gray-200 p-2 text-center text-xs font-medium text-gray-800">
+                    {caseStudy.domain}
+                  </p>
+                </div>
                 <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
                   {caseStudy.title}
                 </p>
@@ -127,7 +122,8 @@ function Services() {
       >
         <p>
           Whether you’re building an MVP, scaling your infrastructure, or
-          optimizing your product, we’ve got you covered
+          optimizing your product, we provide solutions that grow with your
+          business.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -143,16 +139,16 @@ function Services() {
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
             <ListItem title="Custom Software Development">
-              From web apps to enterprise software, we build scalable, secure,
-              and future-proof solutions
+              From web applications to enterprise software, we build scalable,
+              secure, and future-ready solutions tailored to your needs.
             </ListItem>
             <ListItem title="DevOps & Cloud Solutions">
-              Streamline your workflows with CI/CD pipelines, cloud migration,
-              and infrastructure automation
+              streamline your workflows with CI/CD pipelines, cloud migration,
+              and infrastructure automation for seamless scalability.
             </ListItem>
             <ListItem title="Product Consulting">
-              Turn your ideas into market-ready products with expert strategy
-              and execution
+              Transform your ideas into market-ready products with expert
+              strategy, execution, and industry best practices
             </ListItem>
             <ListItem title="AI-Driven Innovations">
               Empowering your business with intelligent automation, predictive
@@ -179,13 +175,14 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="mx-auto max-w-5xl">
           <h1 className="font-display text-5xl font-medium tracking-tight [text-wrap:balance] text-neutral-950 sm:text-7xl">
-            Codemancers provides Expert Web Development For Scalable Digital
-            Success
+            Expert Web Development for Scalable Digital Success
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            Using Ruby, Javascript and DevOps, we build secure, high-performance
-            web applications that transform your vision into measurable growth
-            for startups and enterprises alike
+            For over a decade, we've been building high-quality,
+            high-performance, and secure applications with a technology-first
+            mindset. Embracing an AI-driven approach, we now integrate
+            intelligent automation and innovation to help startups and
+            enterprises scale with real impact.
           </p>
         </FadeIn>
       </Container>
