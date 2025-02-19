@@ -36,7 +36,7 @@ export default function AboutUs() {
         <h1 className="text-custom-gray text-center text-2xl font-semibold">
           What Our Clients Say
         </h1>
-        <TestimonialCard />
+        {/* <TestimonialCard /> */}
       </div>
       <div className="mx-auto mt-10 flex max-w-5xl flex-col text-center">
         <p className="text-gray-70 mt-16">

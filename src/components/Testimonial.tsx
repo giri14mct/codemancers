@@ -96,7 +96,7 @@ export function Testimonial() {
                       </svg>
                     </button>
 
-                    <blockquote className="mx-auto h-auto max-w-80 text-center text-3xl leading-relaxed font-medium sm:max-w-5xl sm:text-4xl">
+                    <blockquote className="mx-auto h-auto text-center text-2xl leading-relaxed font-medium sm:max-w-5xl sm:text-4xl">
                       <p className="before:content-['“'] after:content-['”']">
                         {client.quote}
                       </p>
@@ -123,34 +123,31 @@ export function Testimonial() {
                       </svg>
                     </button>
 
-                    <figcaption className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
+                    <figcaption className="mt-10 flex items-center justify-center gap-6">
                       <div className="flex items-center gap-4">
                         <Image
                           src={client.image}
                           alt={client.name}
-                          width={100}
-                          height={100}
-                          className="rounded-full border border-white/10"
+                          className="h-16 w-16 rounded-full border border-white/10 sm:h-20 sm:w-20"
                           unoptimized
                         />
                         <div className="text-left">
-                          <p className="text-lg font-semibold text-nowrap">
+                          <p className="text-base font-semibold text-nowrap sm:text-lg">
                             {client.name}
                           </p>
-                          <p className="text-sm opacity-75">
+                          <p className="text-sm opacity-75 sm:text-lg">
                             {client.role}, {client.company}
                           </p>
                         </div>
                       </div>
 
-                      <div className="hidden h-10 w-px bg-gray-400 sm:block"></div>
+                      <div className="h-10 w-px bg-gray-400"></div>
 
                       <div className="flex items-center justify-center">
                         <Image
                           src={client.companyLogo}
                           alt={client.name}
-                          width={70}
-                          height={70}
+                          className="h-16 w-16 sm:h-20 sm:w-20"
                           unoptimized
                         />
                       </div>
@@ -160,13 +157,12 @@ export function Testimonial() {
               ))}
             </div>
 
-            {/* Slider Indicators */}
             <div className="absolute -bottom-10 left-1/2 z-30 flex -translate-x-1/2 space-x-3 sm:bottom-0">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   type="button"
-                  className={`h-3 w-3 rounded-full ${
+                  className={`h-2 w-2 rounded-full sm:h-3 sm:w-3 ${
                     activeIndex === index ? 'bg-gray-800' : 'bg-gray-400'
                   }`}
                   onClick={() => setActiveIndex(index)}
