@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Services() {
   return (
     <Container className="mt-24 sm:mt-32 md:mt-56">
-      <FadeIn className="mx-auto max-w-5xl">
+      <FadeIn>
         <div className="px-6 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4">
             <h1 className="font-display text-5xl font-medium tracking-tight [text-wrap:balance] text-neutral-950 sm:text-7xl">
@@ -40,7 +40,11 @@ export default function Services() {
                     help you succeed. Let’s create something amazing together.
                   </p>
                 </div>
+              </FadeIn>
+            </Container>
 
+            <Container>
+              <FadeIn>
                 <div className="mt-6 flex w-full flex-col items-center justify-center gap-4 sm:flex-row">
                   <Link
                     href="/portfolio/"
