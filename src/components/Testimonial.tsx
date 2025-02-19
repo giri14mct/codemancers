@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { GridPattern } from '@/components/GridPattern'
@@ -17,8 +17,8 @@ export function Testimonial() {
     {
       name: 'Aananth Solaiyappan',
       image: aananthSolaiyappan,
-      role: 'Founder',
-      company: 'CEO & CISO',
+      role: 'Founder, CEO & CISO',
+      company: 'SquareShift',
       companyLogo: squareShift,
       quote: `Codemancers is a team of solid engineers & hackers who understand modern
               development practices and design-led product development. They have
@@ -29,7 +29,7 @@ export function Testimonial() {
       name: 'Rafeequl Rahman',
       image: rafeequl,
       role: 'CVP Engineering',
-      company: 'midtrans',
+      company: 'Midtrans',
       companyLogo: midTrans,
       quote: `Codemancers have a strong ownership to the projects as they are a self-organized team. Codemancers team members are highly skilled people with a smart and nice personality. They are also one of the few organizations that bring a positive influence to my team by pushing best practices into day-to-day software development. Will definitely be using their service for our future projects.`,
     },
@@ -37,7 +37,7 @@ export function Testimonial() {
       name: 'Kevin Wolff',
       image: kevin,
       role: 'CTO',
-      company: 'ivrnet Inc.',
+      company: 'Ivrnet Inc.',
       companyLogo: ivrnetInc,
       quote: `The Codemancer team is a self-contained dev shop. They do a great job of interpreting requirements, ask appropriate questions at the appropriate time, self-manage, and deliver. All of this is done using best practices and cutting-edge technology.`,
     },
@@ -65,6 +65,38 @@ export function Testimonial() {
     )
   }
 
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current
+
+    if (!scrollContainer) return
+
+    const handleScroll = () => {
+      const children = scrollContainer.children
+      let closestIndex = 0
+      let closestOffset = Infinity
+
+      for (let i = 0; i < children.length; i++) {
+        const rect = children[i].getBoundingClientRect()
+        const offset = Math.abs(
+          rect.left - scrollContainer.getBoundingClientRect().left,
+        )
+
+        if (offset < closestOffset) {
+          closestOffset = offset
+          closestIndex = i
+        }
+      }
+
+      setActiveIndex(closestIndex)
+    }
+
+    scrollContainer.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      scrollContainer.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <div className="relative isolate mt-24 bg-neutral-50 py-16 sm:mt-32 sm:py-28 md:py-32 lg:mt-40">
       <GridPattern
@@ -76,12 +108,12 @@ export function Testimonial() {
           <div className="relative">
             <div
               ref={scrollContainerRef}
-              className="flex snap-x snap-mandatory space-x-6 overflow-x-auto scroll-smooth px-4 sm:hidden"
+              className="scrollbar-hide flex snap-x snap-mandatory space-x-6 overflow-x-auto scroll-smooth px-4 sm:hidden"
             >
               {testimonials.map((client, index) => (
                 <div key={index} className="w-full flex-shrink-0 snap-center">
                   <figure className="relative mx-auto flex flex-col gap-6">
-                    <blockquote className="mx-auto h-auto text-center text-lg leading-relaxed font-medium">
+                    <blockquote className="mx-auto h-auto text-center text-xl leading-relaxed font-medium">
                       <p className="before:content-['“'] after:content-['”']">
                         {client.quote}
                       </p>
@@ -95,8 +127,8 @@ export function Testimonial() {
                         unoptimized
                       />
                       <div className="text-left">
-                        <p className="text-sm font-semibold">{client.name}</p>
-                        <p className="text-xs opacity-75">
+                        <p className="text-lg font-semibold">{client.name}</p>
+                        <p className="text-base opacity-75">
                           {client.role}, {client.company}
                         </p>
                       </div>
@@ -197,13 +229,15 @@ export function Testimonial() {
               ))}
             </div>
 
-            <div className="absolute -bottom-10 left-1/2 z-30 flex -translate-x-1/2 space-x-3 sm:hidden">
+            <div className="absolute -bottom-10 left-1/2 z-30 flex -translate-x-1/2 space-x-3">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   type="button"
-                  className={`h-2 w-2 rounded-full sm:h-3 sm:w-3 ${
-                    activeIndex === index ? 'bg-gray-800' : 'bg-gray-400'
+                  className={`h-2 w-2 rounded-full transition-all duration-300 sm:h-3 sm:w-3 ${
+                    activeIndex === index
+                      ? 'scale-125 bg-gray-800' // Enlarged active dot with darker color
+                      : 'bg-gray-400 opacity-50' // Dimmed inactive dots
                   }`}
                   onClick={() => handleScroll(index)}
                 ></button>
