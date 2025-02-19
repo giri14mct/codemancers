@@ -196,15 +196,7 @@ export default async function Home() {
 
       <CaseStudies caseStudies={caseStudies} />
 
-      <Testimonial
-        className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Aananth Solaiyappan', logo: aananthSolaiyappan }}
-      >
-        Codemancers is a team of solid engineers & hackers who understand modern
-        development practices and design lead product development, who have
-        successfully worked with couple of my startups. They can be a great
-        partner to startups.
-      </Testimonial>
+      <Testimonial></Testimonial>
 
       <Services />
 
