@@ -157,7 +157,7 @@ export function Testimonial() {
               ))}
             </div>
 
-            <div className="absolute -bottom-10 left-1/2 z-30 flex -translate-x-1/2 space-x-3 sm:bottom-0">
+            <div className="absolute -bottom-10 left-1/2 z-30 flex -translate-x-1/2 space-x-3">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
