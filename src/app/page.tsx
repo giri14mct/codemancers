@@ -8,7 +8,7 @@ import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
-import imageLaptop from '@/images/workspace.jpg'
+import workspace from '@/images/workspace.jpg'
 import flipkart from '@/images/clients/flipkart/logo-light.svg'
 import clearTax from '@/images/clients/clear-tax/logo-light.svg'
 import midTrans from '@/images/clients/mid-trans/logo-light.svg'
@@ -131,7 +131,7 @@ function Services() {
           <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
             <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
               <StylizedImage
-                src={imageLaptop}
+                src={workspace}
                 sizes="(min-width: 1024px) 41rem, 31rem"
                 className="justify-center lg:justify-end"
               />
