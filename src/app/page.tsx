@@ -178,7 +178,7 @@ export default async function Home() {
             Expert Web Development for Scalable Digital Success
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            For over a decade, we've been building high-quality,
+            For over a decade, we’ve been building high-quality,
             high-performance, and secure applications with a technology-first
             mindset. Embracing an AI-driven approach, we now integrate
             intelligent automation and innovation to help startups and
