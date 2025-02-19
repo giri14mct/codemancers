@@ -1,18 +1,19 @@
-import React from 'react';
-// import Link from 'next/link';
+import React from 'react'
+import { FadeIn } from '@/components/FadeIn'
+import { Container } from '@/components/Container'
 
 interface Feature {
-  title: string;
-  description: string;
+  title: string
+  description: string
 }
 
 interface ContentSection {
-  id: string;
-  heading: string;
-  link: string;
-  description: string;
-  features: Feature[];
-  buttonText: string;
+  id: string
+  heading: string
+  link: string
+  description: string
+  features: Feature[]
+  buttonText: string
 }
 
 const contentSections: ContentSection[] = [
@@ -124,62 +125,67 @@ const contentSections: ContentSection[] = [
     ],
     buttonText: 'Start Your Product Journey →',
   },
-];
+]
 
 const ServiceCards = () => {
   return (
-    <div className="w-full py-16">
-      <div className="flex flex-wrap justify-between gap-8">
-        {contentSections.map((content) => (
-          <div
-            key={content.id}
-            className="flex flex-col justify-between w-full sm:w-[calc(50%-16px)] gap-5 p-8 border rounded-2xl bg-gradient-to-br from-white to-gray-10"
-          >
-            <div className="flex flex-col gap-8">
-              <p className="text-sm font-medium text-custom-gray">
-                {content.id}
-              </p>
-              <div className="flex flex-col gap-4">
-                <h2 className="mt-2 text-2xl font-semibold text-custom-gray">
-                  {content.heading}
-                </h2>
-                <p className="text-base text-gray-70">{content.description}</p>
-              </div>
-
-              <ul className="space-y-2 list-disc">
-                {content.features.map((feature, fIndex) => (
-                  <>
-                    <li key={fIndex} className="mt-2 text-gray-700">
-                      <span className="text-base font-semibold text-custom-gray">
-                        {feature.title}:
-                      </span>
-                    </li>
-                    <li
-                      key={fIndex}
-                      className="text-gray-700 list-disc marker:text-white"
-                    >
-                      <span className="mt-2 text-base text-gray-70">
-                        {feature.description}
-                      </span>
-                    </li>
-                  </>
-                ))}
-              </ul>
-            </div>
-
-            {/* <div className="flex items-center justify-center md:justify-start">
-              <Link
-                href={content.link}
-                className="flex items-center justify-center px-4 py-2 mt-6 text-sm font-semibold transition-all border w-61 h-11 rounded-3xl border-blue-650 text-blue-650 hover:bg-blue-650 hover:text-white"
+    <Container>
+      <FadeIn>
+        <div className="w-full py-16">
+          <div className="mt-24 flex flex-wrap justify-between gap-8 sm:mt-32 lg:mt-56">
+            {contentSections.map((content) => (
+              <div
+                key={content.id}
+                className="to-gray-10 flex w-full flex-col justify-between gap-5 rounded-2xl border bg-gradient-to-br from-white p-8 sm:w-[calc(50%-16px)]"
               >
-                {content.buttonText}
-              </Link>
-            </div> */}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+                <div className="flex flex-col gap-8">
+                  <Container>
+                    <FadeIn>
+                      <p className="text-custom-gray text-sm font-medium">
+                        {content.id}
+                      </p>
+                      <div className="flex flex-col gap-4">
+                        <h2 className="text-custom-gray mt-2 text-2xl font-semibold">
+                          {content.heading}
+                        </h2>
+                        <p className="text-gray-70 text-base">
+                          {content.description}
+                        </p>
+                      </div>
+                    </FadeIn>
+                  </Container>
 
-export default ServiceCards;
+                  <Container>
+                    <FadeIn>
+                      <ul className="list-disc space-y-2">
+                        {content.features.map((feature, fIndex) => (
+                          <>
+                            <li key={fIndex} className="mt-2 text-gray-700">
+                              <span className="text-custom-gray text-base font-semibold">
+                                {feature.title}:
+                              </span>
+                            </li>
+                            <li
+                              key={fIndex}
+                              className="list-disc text-gray-700 marker:text-white"
+                            >
+                              <span className="text-gray-70 mt-2 text-base">
+                                {feature.description}
+                              </span>
+                            </li>
+                          </>
+                        ))}
+                      </ul>
+                    </FadeIn>
+                  </Container>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </FadeIn>
+    </Container>
+  )
+}
+
+export default ServiceCards
