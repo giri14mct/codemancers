@@ -234,10 +234,10 @@ export function Testimonial() {
                 <button
                   key={index}
                   type="button"
-                  className={`h-2 w-2 rounded-full transition-all duration-300 sm:h-3 sm:w-3 ${
+                  className={`h-2 w-2 rounded-full transition-all duration-300 ${
                     activeIndex === index
-                      ? 'scale-125 bg-gray-800' // Enlarged active dot with darker color
-                      : 'bg-gray-400 opacity-50' // Dimmed inactive dots
+                      ? 'scale-125 bg-gray-800'
+                      : 'bg-gray-400 opacity-50'
                   }`}
                   onClick={() => handleScroll(index)}
                 ></button>
