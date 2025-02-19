@@ -129,62 +129,56 @@ const contentSections: ContentSection[] = [
 
 const ServiceCards = () => {
   return (
-    <Container>
-      <FadeIn>
-        <div className="w-full py-16">
-          <div className="mt-24 flex flex-wrap justify-between gap-8 sm:mt-32 lg:mt-56">
-            {contentSections.map((content) => (
-              <div
-                key={content.id}
-                className="to-gray-10 flex w-full flex-col justify-between gap-5 rounded-2xl border bg-gradient-to-br from-white p-8 sm:w-[calc(50%-16px)]"
-              >
-                <div className="flex flex-col gap-8">
-                  <Container>
-                    <FadeIn>
-                      <p className="text-custom-gray text-sm font-medium">
-                        {content.id}
-                      </p>
-                      <div className="flex flex-col gap-4">
-                        <h2 className="text-custom-gray mt-2 text-2xl font-semibold">
-                          {content.heading}
-                        </h2>
-                        <p className="text-gray-70 text-base">
-                          {content.description}
-                        </p>
-                      </div>
-                    </FadeIn>
-                  </Container>
+    <FadeIn>
+      <div className="w-full py-16">
+        <div className="mt-24 flex flex-wrap justify-between gap-8 sm:mt-32 lg:mt-56">
+          {contentSections.map((content) => (
+            <div
+              key={content.id}
+              className="to-gray-10 flex w-full flex-col justify-between gap-5 rounded-2xl border bg-gradient-to-br from-white p-8 sm:w-[calc(50%-16px)]"
+            >
+              <div className="flex flex-col gap-8">
+                <FadeIn>
+                  <p className="text-custom-gray text-sm font-medium">
+                    {content.id}
+                  </p>
+                  <div className="flex flex-col gap-4">
+                    <h2 className="text-custom-gray mt-2 text-2xl font-semibold">
+                      {content.heading}
+                    </h2>
+                    <p className="text-gray-70 text-base">
+                      {content.description}
+                    </p>
+                  </div>
+                </FadeIn>
 
-                  <Container>
-                    <FadeIn>
-                      <ul className="list-disc space-y-2">
-                        {content.features.map((feature, fIndex) => (
-                          <>
-                            <li key={fIndex} className="mt-2 text-gray-700">
-                              <span className="text-custom-gray text-base font-semibold">
-                                {feature.title}:
-                              </span>
-                            </li>
-                            <li
-                              key={fIndex}
-                              className="list-disc text-gray-700 marker:text-white"
-                            >
-                              <span className="text-gray-70 mt-2 text-base">
-                                {feature.description}
-                              </span>
-                            </li>
-                          </>
-                        ))}
-                      </ul>
-                    </FadeIn>
-                  </Container>
-                </div>
+                <FadeIn>
+                  <ul className="list-disc space-y-2 pl-[14px]">
+                    {content.features.map((feature, fIndex) => (
+                      <>
+                        <li key={fIndex} className="mt-2 text-gray-700">
+                          <span className="text-custom-gray text-base font-semibold">
+                            {feature.title}:
+                          </span>
+                        </li>
+                        <li
+                          key={fIndex}
+                          className="list-disc text-gray-700 marker:text-white"
+                        >
+                          <span className="text-gray-70 mt-2 text-base">
+                            {feature.description}
+                          </span>
+                        </li>
+                      </>
+                    ))}
+                  </ul>
+                </FadeIn>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </FadeIn>
-    </Container>
+      </div>
+    </FadeIn>
   )
 }
 

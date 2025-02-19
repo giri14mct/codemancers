@@ -55,7 +55,7 @@ export default function Services() {
 
                   <Link
                     href="/contact/"
-                    className="text-blue-650 border-brand-blue hover:bg-brand-blue flex h-11 w-full items-center justify-center rounded-lg border px-6 text-base font-medium transition-all hover:text-white md:w-auto"
+                    className="text-blue-650 border-brand-blue hover:bg-brand-blue flex h-11 w-full items-center justify-center rounded-lg border px-6 text-base font-medium text-nowrap transition-all hover:text-white md:w-auto"
                   >
                     Schedule a Free Consultation →
                   </Link>
